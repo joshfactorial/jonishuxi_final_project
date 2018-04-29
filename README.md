@@ -36,7 +36,7 @@
      else document.addEventListener("DOMContentLoaded", fn);
    })();
  </script>
-<head>
+</head>
      
 Visualization for Peers
 ===========
