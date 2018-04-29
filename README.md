@@ -1,3 +1,6 @@
+#+HTML_HEAD: <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
+#+HTML_HEAD: <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
+
 Visualization for Peers
 ===========
 # Jonishuxi Final Project
