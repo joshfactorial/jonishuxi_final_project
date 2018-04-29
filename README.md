@@ -29,7 +29,6 @@ This plot shows the range of salaries at each position at different year. We can
 
 Initially, we showed the data as a line graph for each position across the years. This plot shows all the positions as a bar graph for a given year. Sliding through the years gives a more visual contrast to how the pay rates have changed.
 
-interactive(children=(IntSlider(value=2000, description='year', max=2016, min=1985), Output()), _dom_classes=(…
 <script type="text/javascript">
 (function() {
      var fn = function() {
