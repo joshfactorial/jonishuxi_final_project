@@ -1,4 +1,5 @@
-<header>
+<html>
+<head>
 <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
 <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
 <script type="text/javascript">
@@ -36,7 +37,8 @@
      else document.addEventListener("DOMContentLoaded", fn);
    })();
  </script>
- </header>
+ </head>
+ <body>
 
 Visualization for Peers
 ===========
@@ -72,3 +74,6 @@ Initially, we showed the data as a line graph for each position across the years
 <div class="bk-root">
     <div class="bk-plotdiv" id="53026025-0272-44bc-abc9-06d7a7cc4cd3"></div>
 </div>
+
+</body>
+</html>
