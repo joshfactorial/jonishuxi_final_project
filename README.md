@@ -1,4 +1,3 @@
-   
 <!DOCTYPE html>
 <html lang = "en">
    <head>
@@ -45,7 +44,7 @@
    </head>
    
    <body>       
-   <h1>Visualization for Peers</h1>
+   <h1>Visualization for Others</h1>
    <hr>
    <h2> Jonishuxi Final Project</h2>
    <ul>
