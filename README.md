@@ -1,2 +1,2 @@
-# Jonishuxi Final Project
+# Shujonixi Final Project
 Project Page for our final project
