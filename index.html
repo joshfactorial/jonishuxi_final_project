@@ -12646,9 +12646,7 @@ div#notebook {
 	   <h2>Salaries by age over the years</h2>
 	   <p>Here we show a graphic that reflects how players at different positions have been paid over the years. You can see similar trends over the years to what is shown above, where players tend to be paid more in what is considered their primer production years.</p>
 	   
-	   <div class="output_html rendered_html output_subarea ">
-		   <script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
-	   </div>
+	   INSERT FIGURE HERE
 	
 	   <h2>Payrolls for the top teams</h2>
 	   <p>For this part, we show a relationship between team success in the regular season and their total payroll. As the graphic shows, we find that, in general, the teams that had the most success were the teams that spent the most money. The dataset "Teams" has the variable of Rank, which roughly corresponds to how teams ended the regular season (though this is a little confused by post-season structure, as you can see by the lines that stop or disappear), so we looked the relationship between teams' rank and salary. We merged Teams.csv and Salaries.csv into one dataframe and grouped by the yearID and Rank.Then we renamed each column because the columns' name were numbers initially and could not be used in a dataframe slice. We defined a dictionary to set every rank's color. Finally, we defined a function to plot a picture about the rank vs year and salary.</p>
