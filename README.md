@@ -28,8 +28,63 @@ This plot shows the range of salaries at each position at different year. We can
 Initially, we showed the data as a line graph for each position across the years. This plot shows all the positions as a bar graph for a given year. Sliding through the years gives a more visual contrast to how the pay rates have changed.
 
 
-<a name="figure"></a>
-    
-<div class="bk-root">
-    <div class="bk-plotdiv" id="53026025-0272-44bc-abc9-06d7a7cc4cd3"><img src="jonishuxi_final_project/_fig1"></div>
-</div>
+```python
+#from bokeh.plotting import *
+#from bokeh.models import HoverTool
+from bokeh.embed import components
+#import pandas as pd
+#from ipywidgets import interact
+#import bokeh
+from bokeh.io import show, output_file, output_notebook
+from bokeh.plotting import figure
+from bokeh.palettes import Viridis
+from bokeh.models import ColumnDataSource, HoverTool,NumeralTickFormatter
+import pandas as pd
+#import ipywidgets
+from ipywidgets import interact
+#import matplotlib.pyplot as plt
+#import numpy as np
+#from scipy.stats import gaussian_kde
+
+output_notebook()
+hover = HoverTool(tooltips=[
+   ("Position: ","@pos"),
+   ("Salary: ","$y{(0,0)}")
+])
+
+salary = pd.read_csv("data/Salaries.csv")
+fielding = pd.read_csv("data/Fielding.csv")
+player_position = pd.merge(salary, fielding, on = ["playerID","yearID"])[["yearID", "playerID", "salary", "POS"]]
+data = player_position.groupby(["yearID", "POS"]).mean()["salary"].unstack()
+d = {}
+d = {"1B" : 'b-', "2B" : 'c-',"3B" : 'g-',"OF":'g--',"SS":'y-',"P":'r-',"C" :'k-'}
+
+def fi(year):
+    x = player_position[player_position["yearID"]==year]
+    #print(x)
+    data = x.groupby("POS").max()["salary"].reset_index()
+    pos=[]
+    for i in data["POS"]:
+        pos.append(i)
+    #print(data["POS"])
+    #print(pos)
+    sal=[]
+    for i in data["salary"]:
+        sal.append(i)
+    source=ColumnDataSource(data=dict(pos=pos,salary=sal,color=Viridis[7]))
+    #sal = data["salary"]
+    #print(pos)
+    p=figure(x_range=pos,title="Salaries in different positions",tools=[hover])
+    p.vbar(x="pos",top="salary",color="color",source=source,legend="pos",width=0.9)
+    p.legend.orientation = "horizontal"
+    p.xaxis.axis_label = "Position"
+    p.yaxis[0].formatter = NumeralTickFormatter(format="$0,0")
+    p.yaxis.axis_label = "Salary"
+    show(p)
+    #print(data)
+
+interact(fi,year=(1985,2016))
+```
+
+Test
+
