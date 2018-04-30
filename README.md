@@ -27,8 +27,6 @@ This plot shows the range of salaries at each position at different year. We can
 
 Initially, we showed the data as a line graph for each position across the years. This plot shows all the positions as a bar graph for a given year. Sliding through the years gives a more visual contrast to how the pay rates have changed.
 
-
-```python
 #from bokeh.plotting import *
 #from bokeh.models import HoverTool
 from bokeh.embed import components
@@ -84,7 +82,6 @@ def fi(year):
     #print(data)
 
 interact(fi,year=(1985,2016))
-```
 
 Test
 
