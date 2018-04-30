@@ -12659,22 +12659,76 @@ div#notebook {
 		</div>
 	   </div>
 	
-	
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-	
-	<script type="application/vnd.jupyter.widget-view+json">
-{
-    "model_id": "022749eda8eb4db88eca62fd0b420171",
-    "version_major": 2,
-    "version_minor": 0
-}
-
-
-</script>
+	   <h2>Payrolls for the top teams</h2>
+	   <p>For this part, we show a relationship between team success in the regular season and their total payroll. As the graphic shows, we find that, in general, the teams that had the most success were the teams that spent the most money. The dataset "Teams" has the variable of Rank, which roughly corresponds to how teams ended the regular season (though this is a little confused by post-season structure, as you can see by the lines that stop or disappear), so we looked the relationship between teams' rank and salary. We merged Teams.csv and Salaries.csv into one dataframe and grouped by the yearID and Rank.Then we renamed each column because the columns' name were numbers initially and could not be used in a dataframe slice. We defined a dictionary to set every rank's color. Finally, we defined a function to plot a picture about the rank vs year and salary.</p>
+	   <p>One interesting aspect of these data are that you can see the changes the league has gone through reflected in this plot. In  1993, divisions were reorganized from 2 divisions to 3 with the addition of two new expansion teams, and again in 1998 with the addition of 2 more new teams, and the leagues were reorganized in 2012 due to interleague play and the addition of the wildcard playoff game.</p>
 	   
-
-	   
+	   <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt"></div>
+		   <script type="application/vnd.jupyter.widget-view+json">
+		   {
+		   "model_id": "022749eda8eb4db88eca62fd0b420171",
+		   "version_major": 2,
+		   "version_minor": 0
+		   }
+		   </script>
+		   
+		   <h2>Heatmap of pitching attributes</h2>
+		   <p>Here, we present a heatmap of different attributes of pitching correlated against each other to see if any patterns emerge. As this graphic shows, performance in terms of wins and losses has a very low correlation with salary. While things like batters faced and hits against correlate much more strongly with salary, which you expect since starting pitchers make more money and they face more batters and thus will give up more hits.</p>
+		   <p>Other unsuprising trends is a correlation between giving up hits and losing, and a pretty good correlation between number of wins and number of shutouts pitched. While there wasn't anything overly surprising, it gives a good way to quickly evaluate the raw data.</p>
+		   
+		   <h2>On-base-plus-slugging comparison</h2>
+		   <p>In baseball, on-base-plus-slugging is a stat that reflects players' hitting performance. As it is two percentages addedd together, it is essentially meaningless, but serves as a way to compare players across the league. On-base percentage is a measure of the hits, walks, and hit-by-pitches a player received, divided by total plate appearances. Slugging percentage is basically a weighted batting average, where doubles are weighted 2, triples 3 and homeruns 4. The total bases are divided by the number of official at-bats (defined as a plate appearance that doesn't end in a walk or sacrifice). OPS is a good predictor of future performance as OBP and power tend to be consistent across players' careeres. There are further refinements, such as OPS+, which normalizes OPS by the league average. Due to some outliers for players with few plate appearances, we set a reasonable lower limit to the number of at-bats. This should have the effect of focusing the data only on regular hitters (American League pitchers, for example, only bat in interleague play, and relief pitchers hardly bat at all).</p>
+		   <p>Specifically, we are examining here the performance of players who played in the post-season by comparing their post-season and regular season OPS, to look for interesting features. Do players step it up in the postseason, or crack under the pressure?</p>
+		   <p>For a first pass at the post-season OPS v regular season OPS data, we made a hexbin plot with interactions that allow you to select an OPS range and date range. The OPS range is set to show all values at the lowest end, beyond that it shows ranges that coincide with Bill James categories of hitter abilities:</p>
+		   <table>
+			   <thead><tr>
+				   <th>Category</th>
+				   <th>Classification</th>
+				   <th>OPS Range</th>
+				   </tr>
+			   </thead>
+			   <tbody>
+				   <tr>
+					   <td>A</td>
+					   <td>Great</td>
+					   <td>.9000 or higher</td>
+				   </tr>
+				   <tr>
+					   <td>B</td>
+					   <td>Very Good</td>
+					   <td>.8333 to .8999</td>
+				   </tr>
+				   <tr>
+					   <td>C</td>
+					   <td>Above Average</td>
+					   <td>.7667 to .8333</td>
+				   </tr>
+				   <tr>
+					   <td>D</td>
+					   <td>Average</td>
+					   <td>.7000 to .7666</td>
+				   </tr>
+				   <tr>
+					   <td>E</td>
+					   <td>Below Average</td>
+					   <td>.6334 to .6999</td>
+				   </tr>
+				   <tr>
+					   <td>F</td>
+					   <td>Poor</td>
+					   <td>.5667 to .6333</td>
+				   </tr>
+				   <tr>
+					   <td>G</td>
+					   <td>Very Poor</td>
+					   <td>.5666 and lower</td>
+				   </tr>
+			   </tbody>
+		   </table>
+		   <p>For the years, the lowest setting shows all years, and beyond that it shows the decade before the shown date, so 1990 shows the data from the '90s. Histograms show the distribution of the OPS values in the regular season and post-season. Only regular season for players who appeared in the post-season is shown. While there are some interesting features of this data, the main takeaway was that the performance in both realms followed a normal distribution overall. Some good players played bad, some bad players played well, but overall they tended to perform at the same level. So Billy Beane's claim that his advanced analytics techniques don't work in the postseason was untrue. Turned out his teams were just unlucky outliers.</p>
+		   
+		   <h2>Gaussian KDE + interactivity</h2>
+		   <p>For this plot, we look at the same data but in a different way. The base of this plot is a scatter plot of all the data, which is then overlaid with a Gaussian kernel density estimate, shown as color. This is an approximation of the probability density at each point, and gives a visual representation of how concentrated the points are in the scatter. The interesting takeaways for me is that the density was never in the red. So the data do follow a normal distribution, but with pretty wide standard deviation (which is also fairly evident in the histograms above)</p>
    </body>
 </html>
 
