@@ -12671,7 +12671,7 @@ div#notebook {
 		   <p>In baseball, on-base-plus-slugging is a stat that reflects players' hitting performance. As it is two percentages addedd together, it is essentially meaningless, but serves as a way to compare players across the league. On-base percentage is a measure of the hits, walks, and hit-by-pitches a player received, divided by total plate appearances. Slugging percentage is basically a weighted batting average, where doubles are weighted 2, triples 3 and homeruns 4. The total bases are divided by the number of official at-bats (defined as a plate appearance that doesn't end in a walk or sacrifice). OPS is a good predictor of future performance as OBP and power tend to be consistent across players' careeres. There are further refinements, such as OPS+, which normalizes OPS by the league average. Due to some outliers for players with few plate appearances, we set a reasonable lower limit to the number of at-bats. This should have the effect of focusing the data only on regular hitters (American League pitchers, for example, only bat in interleague play, and relief pitchers hardly bat at all).</p>
 		   <p>Specifically, we are examining here the performance of players who played in the post-season by comparing their post-season and regular season OPS, to look for interesting features. Do players step it up in the postseason, or crack under the pressure?</p>
 		   <p>For a first pass at the post-season OPS v regular season OPS data, we made a hexbin plot with interactions that allow you to select an OPS range and date range. The OPS range is set to show all values at the lowest end, beyond that it shows ranges that coincide with Bill James categories of hitter abilities:</p>
-		   <table>
+		   <table border=1>
 			   <thead><tr>
 				   <th>Category</th>
 				   <th>Classification</th>
@@ -12717,9 +12717,22 @@ div#notebook {
 			   </tbody>
 		   </table>
 		   <p>For the years, the lowest setting shows all years, and beyond that it shows the decade before the shown date, so 1990 shows the data from the '90s. Histograms show the distribution of the OPS values in the regular season and post-season. Only regular season for players who appeared in the post-season is shown. While there are some interesting features of this data, the main takeaway was that the performance in both realms followed a normal distribution overall. Some good players played bad, some bad players played well, but overall they tended to perform at the same level. So Billy Beane's claim that his advanced analytics techniques don't work in the postseason was untrue. Turned out his teams were just unlucky outliers.</p>
-		   
+		   	<script type="application/vnd.jupyter.widget-view+json">
+			{
+			    "version_major": 2,
+			    "version_minor": 0,
+			    "model_id": "bd65c1a315394490843eab54f3f8b5a9"
+			}
+			</script>
 		   <h2>Gaussian KDE + interactivity</h2>
 		   <p>For this plot, we look at the same data but in a different way. The base of this plot is a scatter plot of all the data, which is then overlaid with a Gaussian kernel density estimate, shown as color. This is an approximation of the probability density at each point, and gives a visual representation of how concentrated the points are in the scatter. The interesting takeaways for me is that the density was never in the red. So the data do follow a normal distribution, but with pretty wide standard deviation (which is also fairly evident in the histograms above)</p>
+	   		<script type="application/vnd.jupyter.widget-view+json">
+			{
+			    "version_major": 2,
+			    "version_minor": 0,
+			    "model_id": "f7565d3200d6432db3da0d1e49aae413"
+			}
+			</script>
    </body>
 </html>
 
