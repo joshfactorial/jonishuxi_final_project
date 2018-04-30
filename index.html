@@ -868,15 +868,24 @@
 	<div class="bk-root">
 		<div class="bk-plotdiv" id="024b97dc-ce67-454b-95f8-d210d3aa1bda"></div>
 	</div>
-	
+	   <h2>Salaries by age for different positions</h2>
+
+	<p>This graph demonstrates how salaries change by age at each position, cumulating data from 1985 until 2015. Ages 30-40 years old are players golden ages at every position. That makes sense, given that those tend to be the ages when players enter free agency, even though the data also shows that player performance tends to decline after age 30. Most players' salaries  drop after 40 years old, which is the age many players retire. The pitcher spike in the late 40s is mainly due to a single outlier: Jamie Moyer, who finally retired at age 50 (!!) was an effective starting pitcher well into his 40s, when he helped the Phillies to several post-season appearances and a World Series title.</p>
+	   <p>For this plot, we merged three tables: People, Fielding and Salary using the playerID field to link them. To clean this dataset, we only choose time period when they playing during 1985 to 2015.</p>
+	   
 	<script type="application/vnd.jupyter.widget-view+json">
 {
     "model_id": "022749eda8eb4db88eca62fd0b420171",
     "version_major": 2,
     "version_minor": 0
 }
-</script>
 
+
+</script>
+	   <h2>Salaries by age over the years</h2>
+
+<p>Here we show a graphic that reflects how players at different positions have been paid over the years. You can see similar trends over the years to what is shown above, where players tend to be paid more in what is considered their primer production years.</p>
+	   
 <script type="application/vnd.jupyter.widget-view+json">
 {
     "model_id": "d27ad40347714673946f2520747dec5c",
@@ -884,6 +893,12 @@
     "version_minor": 0
 }
 </script>
+		<h2>Payrolls for the top teams</h2>
+
+<p>For this part, we show a relationship between team success in the regular season and their total payroll. As the graphic shows, we find that, in general, the teams that had the most success were the teams that spent the most money. The dataset "Teams" has the variable of Rank, which roughly corresponds to how teams ended the regular season (though this is a little confused by post-season structure, as you can see by the lines that stop or disappear), so we looked the relationship between teams' rank and salary. We merged Teams.csv and Salaries.csv into one dataframe and grouped by the yearID and Rank.Then we renamed each column because the columns' name were numbers initially and could not be used in a dataframe slice. We defined a dictionary to set every rank's color. Finally, we defined a function to plot a picture about the rank vs year and salary.</p>
+
+<p>One interesting aspect of these data are that you can see the changes the league has gone through reflected in this plot. In  1993, divisions were reorganized from 2 divisions to 3 with the addition of two new expansion teams, and again in 1998 with the addition of 2 more new teams, and the leagues were reorganized in 2012 due to interleague play and the addition of the wildcard playoff game.</p>
+	   
 
 <script type="application/vnd.jupyter.widget-view+json">
 {
@@ -892,6 +907,8 @@
     "version_minor": 0
 }
 </script>
+	   
+	   
    </body>
 </html>
 
