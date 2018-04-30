@@ -12660,13 +12660,14 @@ div#notebook {
 
 </script>
 	   
-	   
+		<div>	   
 		<h2>Payrolls for the top teams</h2>
 
-<p>For this part, we show a relationship between team success in the regular season and their total payroll. As the graphic shows, we find that, in general, the teams that had the most success were the teams that spent the most money. The dataset "Teams" has the variable of Rank, which roughly corresponds to how teams ended the regular season (though this is a little confused by post-season structure, as you can see by the lines that stop or disappear), so we looked the relationship between teams' rank and salary. We merged Teams.csv and Salaries.csv into one dataframe and grouped by the yearID and Rank.Then we renamed each column because the columns' name were numbers initially and could not be used in a dataframe slice. We defined a dictionary to set every rank's color. Finally, we defined a function to plot a picture about the rank vs year and salary.</p>
+		<p>For this part, we show a relationship between team success in the regular season and their total payroll. As the graphic shows, we find that, in general, the teams that had the most success were the teams that spent the most money. The dataset "Teams" has the variable of Rank, which roughly corresponds to how teams ended the regular season (though this is a little confused by post-season structure, as you can see by the lines that stop or disappear), so we looked the relationship between teams' rank and salary. We merged Teams.csv and Salaries.csv into one dataframe and grouped by the yearID and Rank.Then we renamed each column because the columns' name were numbers initially and could not be used in a dataframe slice. We defined a dictionary to set every rank's color. Finally, we defined a function to plot a picture about the rank vs year and salary.</p>
 
-<p>One interesting aspect of these data are that you can see the changes the league has gone through reflected in this plot. In  1993, divisions were reorganized from 2 divisions to 3 with the addition of two new expansion teams, and again in 1998 with the addition of 2 more new teams, and the leagues were reorganized in 2012 due to interleague play and the addition of the wildcard playoff game.</p>
-<script type="application/vnd.jupyter.widget-view+json">
+		<p>One interesting aspect of these data are that you can see the changes the league has gone through reflected in this plot. In  1993, divisions were reorganized from 2 divisions to 3 with the addition of two new expansion teams, and again in 1998 with the addition of 2 more new teams, and the leagues were reorganized in 2012 due to interleague play and the addition of the wildcard playoff game.</p>
+	</div>
+	<script type="application/vnd.jupyter.widget-view+json">
 {
     "model_id": "d27ad40347714673946f2520747dec5c",
     "version_major": 2,
