@@ -31,5 +31,5 @@ Initially, we showed the data as a line graph for each position across the years
 <a name="figure"></a>
     
 <div class="bk-root">
-    <div class="bk-plotdiv" id="53026025-0272-44bc-abc9-06d7a7cc4cd3"></div>
+    <div class="bk-plotdiv" id="53026025-0272-44bc-abc9-06d7a7cc4cd3"><img src="jonishuxi_final_project/_fig1"></div>
 </div>
